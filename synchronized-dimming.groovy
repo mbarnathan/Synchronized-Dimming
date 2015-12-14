@@ -28,10 +28,8 @@ definition(
 )
 
 preferences {
-    page(name:"dimmers", title:"Select dimmers to group", nextPage:"", install:true, uninstall: true) {
-        section("Select devices to dim together:") {
-            input "dimmers", "capability.switchLevel", required:true, title:"Dimmers", multiple:true
-        }
+    section("Select devices to dim together:") {
+        input "dimmers", "capability.switchLevel", required:true, title:"Dimmers", multiple:true
     }
 }
 

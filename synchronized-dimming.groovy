@@ -33,10 +33,6 @@ preferences {
             input "dimmers", "capability.switchLevel", required:true, title:"Dimmers", multiple:true
         }
     }
-
-    page(name: "hubDiscovery", title:"Hub Discovery", nextPage: "deviceDiscovery")
-    page(name: "deviceDiscovery", title:"Lutron Device Discovery")
-    page(name: "pairing", title:"Pairing Started!")
 }
 
 def installed() {

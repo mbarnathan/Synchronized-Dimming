@@ -84,8 +84,7 @@ def tieLevel(event) {
                 sendNotificationEvent("${event.displayName} set to ${level}, synchronizing ${dimmers.size() - 1} dimmers.")
             }
         }
-
-        def remainingDimmers = (dimmers ?: []).findAll { (it != event.device && it.currentValue("level") as int) != level }
+        def remainingDimmers = (dimmers ?: []).findAll { it != event.device && it.currentValue("level") as int != level }
         if (remainingDimmers) {
             synchronized(this) {
                 deviceQueue << remainingDimmers.collectEntries { ["${it.device.id}": level] }
